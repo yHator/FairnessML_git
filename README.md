@@ -54,7 +54,7 @@ The overall goal of this code is to take the weather data from NOAA (it is an av
 **Goal:**
 - turn CAISO data into the following format:
     
-|weatherData1|&emsp;weatherData2|&emsp;megawatt_2019|&emsp;megawatt_2020|&emsp;megawatt_2021|
+	|weatherData1|&emsp;weatherData2|&emsp;megawatt_2019|&emsp;megawatt_2020|&emsp;megawatt_2021|
 ---------------------------------------------------------------------------------
 01-01&emsp;|&emsp;123.0&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;123.0&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;123.0&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;123.0&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;123.0
 
