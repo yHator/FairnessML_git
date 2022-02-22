@@ -37,6 +37,15 @@ The overall goal of this code is to take the weather data from NOAA (it is an av
 ## Process NOAA data.ipynb
 **Goal:**
 - turn NOAA data with just the hourly data and remove the flags and years data
+- there are two types of flags: completeness and measurement
+  - measurement:
+    - says whether it is rounded down (X) or missing (M)
+    - rounded down is fine but missing is not
+    - replace the missing value with an average of the a window of values from 1-5
+    - have function to determine the optimal values of prev 
+  - completeness:
+    - replacing the 'years_' version column
+    - same process as measurement
 
 **Inputs:**
 - data from 4 NOAA locations: San Diego (SD), Sacramento (SAC), San Francisco (SF), Los Angeles(LA)
