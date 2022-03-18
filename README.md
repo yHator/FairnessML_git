@@ -3,6 +3,27 @@
 > First I need to process CAISO and NOAA data, then I will input that into the models. 
 > Currently working on LSTM. 
 > Contact - Yuka Hatori hatoriyuka@gmail.com
+
+## LSTM-BasicModel
+This folder's goal is to execute the basic model of LSTM. This is the baseline that will be improved upon and compared on for performance. As it is, the baseline looks like:
+|model 0 input|&emsp;&emsp;&emsp;|model 1 input|&emsp;&emsp;&emsp;|model 0 type|&emsp;&emsp;&emsp;|model 1 type|&emsp;&emsp;&emsp;|model 1 output|
+---
+SF weather data&emsp;&emsp;&emsp;SF weather data +&emsp;&emsp;basic LSTM&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;basic LSTM&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;RMSE
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;2019 energy 
+
+Model 0 is for predicting weather data. Model 1 is for predicting energy consumption. Output of model 1 is energy consumption. 
+
+I intuitively built a "basic LSTM" from this [source][BasicLSTM].
+
+- LSTM-energy-consumption.ipynb
+- LSTM-future-prediction.ipynb
+- LSTM-weather-data.ipynb
+- figure-out-scaler.ipynb
+
+There is a host of other files, like .save files, which are the MinMaxScalers for each variable. 
+
+The pipeline goes LSTM-energy-consumption --> LSTM-weather-data --> LSTM-future-prediction
+
 ## Data sorting
 Below are all the files associated with processing data that will be used in the LSTM modeling.
 The overall goal of this code is to take the weather data from NOAA (it is an average of several years data in the format of one year) and put the energy consumption data from CAISO alongside. 
@@ -10,7 +31,7 @@ The overall goal of this code is to take the weather data from NOAA (it is an av
 - Process NOAA data.ipynb
 - NOAA and CAISO data together.ipynb
 
-## Process CAISO data.ipynb
+### Process CAISO data.ipynb ###
 **Some important notes:**
 - February 29, 2020 data has been removed from the dataset because it is a leap year
 - NOAA data does not consider February 29th
@@ -34,7 +55,7 @@ The overall goal of this code is to take the weather data from NOAA (it is an av
 - files in the format and with the name CAISO_NetDemand_<date>_Megawatts.csv
 - to directory = '/Users/yukahatori/A_Fairness/CAISO_NetDemand_Megawatts/'
 
-## Process NOAA data.ipynb
+### Process NOAA data.ipynb ###
 **Goal:**
 - turn NOAA data with just the hourly data and remove the flags and years data
 - there are two types of flags: completeness and measurement
@@ -55,7 +76,7 @@ The overall goal of this code is to take the weather data from NOAA (it is an av
 - files in the format and with the name of their location.csv
 - to directory = '/Users/yukahatori/A_Fairness/FairnessML_git/NOAA_Data_Clean/'
 
-## NOAA and CAISO data together.ipynb
+### NOAA and CAISO data together.ipynb ###
 **Some important notes:**
 - I am only using the data from 2019,2020,2021 currently
   - because 2018 and 2022 don't have a full year of data
@@ -80,5 +101,6 @@ The overall goal of this code is to take the weather data from NOAA (it is an av
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
 
    [CAISO_Page]: <https://www.caiso.com/TodaysOutlook/Pages/default.aspx>
+   [BasicLSTM]: <https://towardsdatascience.com/17-rules-of-thumb-for-building-a-neural-network-93356f9930af>
 
 
