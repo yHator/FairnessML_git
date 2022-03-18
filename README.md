@@ -6,6 +6,7 @@
 
 ## LSTM-BasicModel
 This folder's goal is to execute the basic model of LSTM. This is the baseline that will be improved upon and compared on for performance. As it is, the baseline looks like:
+
 |model 0 input|&emsp;&emsp;&emsp;|model 1 input|&emsp;&emsp;&emsp;|model 0 type|&emsp;&emsp;&emsp;|model 1 type|&emsp;&emsp;&emsp;|model 1 output|
 ---
 SF weather data&emsp;&emsp;&emsp;SF weather data +&emsp;&emsp;basic LSTM&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;basic LSTM&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;RMSE
