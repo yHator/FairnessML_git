@@ -7,7 +7,8 @@
 ## LSTM-BasicModel
 This folder's goal is to execute the basic model of LSTM. This is the baseline that will be improved upon and compared on for performance. As it is, the baseline looks like:
 
-[https://github.com/yHator/FairnessML_git/blob/main/README_files/basicModel.png][hi]
+![hi](https://github.com/yHator/FairnessML_git/blob/main/README_files/basicModel.png)
+
     |model 0 input||model 1 input||model 0 type||model 1 type||model 1 output|
 ---
 SF weather data&emsp;&emsp;&emsp;SF weather data +&emsp;&emsp;basic LSTM&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;basic LSTM&emsp;&emsp;&emsp;RMSE
