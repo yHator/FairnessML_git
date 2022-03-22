@@ -82,7 +82,8 @@ Their collective output is stored in the Datasets folder.
 
 **Goal:**
 - turn CAISO data into the following format:
-    
+
+![Megawatts]()
 
 **Inputs:**
 - data from CAISO (2018, 2019, 2020, 2021, 2022)
