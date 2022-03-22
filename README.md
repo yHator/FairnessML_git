@@ -94,10 +94,25 @@ Their collective output is stored in the Datasets folder.
 - files in the format and with the name CAISO_NetDemand_<date>_Megawatts.csv
 - to directory = '/Users/yukahatori/A_Fairness/FairnessML_git/Datasets/CAISO_NetDemand_Megawatts/'
 
+## Extra
+
+Some extra folders I have are: 
+
+- ARMA 
+  - this is from when I was attempting an ARMA model
+- storeLSTM_Learning
+  - this stores the files I used to learn about LSTM and time series modeling
+  - some are using Youtube tutorials
+  - more documentation in each individual file
+- CAISOprices
+  - I was working on using CAISO's API to get pricing 
+  - this might be helpful later
+ 
 
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
 
    [CAISO_Page]: <https://www.caiso.com/TodaysOutlook/Pages/default.aspx>
    [BasicLSTM]: <https://towardsdatascience.com/17-rules-of-thumb-for-building-a-neural-network-93356f9930af>
+  
 
 
