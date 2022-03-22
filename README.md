@@ -83,7 +83,7 @@ Their collective output is stored in the Datasets folder.
 **Goal:**
 - turn CAISO data into the following format:
 
-![Megawatts]()
+![Megawatts](https://github.com/yHator/FairnessML_git/blob/main/README_files/megawatts.png)
 
 **Inputs:**
 - data from CAISO (2018, 2019, 2020, 2021, 2022)
