@@ -1,4 +1,4 @@
-# Documentation on Fairness in ML: TE Markets
+# Documentation on Fairness in Transactive Energy Markets: Modeling Energy Consumption
 > I am building a model that will predict energy consumption based on [CAISO][CAISO_Page] net demand data.
 > First I need to process CAISO and NOAA data, then I will input that into the models. 
 > Currently working on LSTM. 
