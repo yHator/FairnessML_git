@@ -17,6 +17,7 @@ I intuitively built a "basic LSTM" from this [source][BasicLSTM].
 - LSTM-future-prediction.ipynb
 - LSTM-weather-data.ipynb
 - figure-out-scaler.ipynb
+- 
 
 There is a host of other files, like .save files, which are the MinMaxScalers for each variable. 
 
