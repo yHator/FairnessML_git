@@ -7,9 +7,9 @@
 ## LSTM-BasicModel
 This folder's goal is to execute the basic model of LSTM. This is the baseline that will be improved upon and compared on for performance. As it is, the baseline looks like:
 
-|model 0 input|&emsp;&emsp;&emsp;|model 1 input|&emsp;&emsp;&emsp;|model 0 type|&emsp;&emsp;&emsp;|model 1 type|&emsp;&emsp;&emsp;|model 1 output|
+    |model 0 input||model 1 input||model 0 type||model 1 type||model 1 output|
 ---
-SF weather data&emsp;&emsp;&emsp;SF weather data +&emsp;&emsp;basic LSTM&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;basic LSTM&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;RMSE
+SF weather data&emsp;&emsp;&emsp;SF weather data +&emsp;&emsp;basic LSTM&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;basic LSTM&emsp;&emsp;&emsp;RMSE
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;2019 energy 
 
 Model 0 is for predicting weather data. Model 1 is for predicting energy consumption. Output of model 1 is energy consumption. 
@@ -85,9 +85,9 @@ The overall goal of this code is to take the weather data from NOAA (it is an av
 **Goal:**
 - turn CAISO data into the following format:
     
-	|weatherData1|&emsp;weatherData2|&emsp;megawatt_2019|&emsp;megawatt_2020|&emsp;megawatt_2021|
+        |weatherData1|weatherData2|megawatt_2019|megawatt_2020|megawatt_2021|
 ---------------------------------------------------------------------------------
-01-01&emsp;|&emsp;123.0&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;123.0&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;123.0&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;123.0&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;123.0
+01-01&emsp;&emsp;&emsp;&emsp;|&emsp;&emsp;123.0&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;123.0&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;123.0&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;123.0&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;123.0
 
 **Inputs:**
 - data from CAISO (2018, 2019, 2020, 2021, 2022)
