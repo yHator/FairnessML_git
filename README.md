@@ -9,7 +9,7 @@ This folder's goal is to execute the basic model of LSTM. This is the baseline t
 
 ![basicModel](https://github.com/yHator/FairnessML_git/blob/main/README_files/basicModel.png)
 
-Model 0 is for predicting weather data. Model 1 is for predicting energy consumption. Output of model 1 is energy consumption. 
+Model 0 is for predicting weather data, because we need that as an input to model 1. I input each column of weather data variable and have a timestep of 3 (hours). Model 1 is for predicting energy consumption and it takes in energy consumption data as well as weather data. Output of model 1 is future predicted energy consumption. 
 
 I intuitively built a "basic LSTM" from this [source][BasicLSTM].
 
@@ -22,13 +22,14 @@ There is a host of other files, like .save files, which are the MinMaxScalers fo
 
 The pipeline goes LSTM-energy-consumption --> LSTM-weather-data --> LSTM-future-prediction
 
-## Data sorting
+## DataProcess
 Below are all the files associated with processing data that will be used in the LSTM modeling.
 The overall goal of this code is to take the weather data from NOAA (it is an average of several years data in the format of one year) and put the energy consumption data from CAISO alongside. 
 - Process CAISO data.ipynb
 - Process NOAA data.ipynb
 - NOAA and CAISO data together.ipynb
 
+Their collective output is stored in the Datasets folder. 
 ### Process CAISO data.ipynb ###
 **Some important notes:**
 - February 29, 2020 data has been removed from the dataset because it is a leap year
@@ -43,7 +44,7 @@ The overall goal of this code is to take the weather data from NOAA (it is an av
 
 **Inputs:**
 - data from CAISO (2018, 2019, 2020, 2021, 2022)
-- from directory = '/Users/yukahatori/A_Fairness/CAISO_NetDemand_Clean'
+- from directory = '/Users/yukahatori/A_Fairness/FairnessML_git/Datasets/CAISO_NetDemand_Clean/'
   - had to clean the data because some of the dates became wonky
   - ex: hour 00:00 sometimes was in the format of 0:00
     - so I manually cleaned this by pulling the csv into google docs, changing the number format, and then putting it back in the directory
@@ -51,7 +52,7 @@ The overall goal of this code is to take the weather data from NOAA (it is an av
 
 **Outputs:**
 - files in the format and with the name CAISO_NetDemand_<date>_Megawatts.csv
-- to directory = '/Users/yukahatori/A_Fairness/CAISO_NetDemand_Megawatts/'
+- to directory = '/Users/yukahatori/A_Fairness/FairnessML_git/Datasets/CAISO_NetDemand_Megawatts/'
 
 ### Process NOAA data.ipynb ###
 **Goal:**
@@ -68,32 +69,29 @@ The overall goal of this code is to take the weather data from NOAA (it is an av
 
 **Inputs:**
 - data from 4 NOAA locations: San Diego (SD), Sacramento (SAC), San Francisco (SF), Los Angeles(LA)
-- from directory = '/Users/yukahatori/A_Fairness/FairnessML_git/NOAA_Data/'
+- from directory = '/Users/yukahatori/A_Fairness/FairnessML_git/Datasets/NOAA_Data/'
 
 **Outputs:**
 - files in the format and with the name of their location.csv
-- to directory = '/Users/yukahatori/A_Fairness/FairnessML_git/NOAA_Data_Clean/'
+- to directory = '/Users/yukahatori/A_Fairness/FairnessML_git/Datasets/NOAA_Data_Clean/'
 
 ### NOAA and CAISO data together.ipynb ###
 **Some important notes:**
-- I am only using the data from 2019,2020,2021 currently
+- I am only using the data from 2019, 2020, 2021 currently
   - because 2018 and 2022 don't have a full year of data
 
 **Goal:**
 - turn CAISO data into the following format:
     
-        |weatherData1|weatherData2|megawatt_2019|megawatt_2020|megawatt_2021|
----------------------------------------------------------------------------------
-01-01&emsp;&emsp;&emsp;&emsp;|&emsp;&emsp;123.0&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;123.0&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;123.0&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;123.0&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;123.0
 
 **Inputs:**
 - data from CAISO (2018, 2019, 2020, 2021, 2022)
 - data from NOAA (SF, SD, SAC, LA)
-- from directory = '/Users/yukahatori/A_Fairness/CAISO_NetDemand_Clean'
+- from directory = '/Users/yukahatori/A_Fairness/FairnessML_git/Datasets/CAISO_NetDemand_Clean/'
 
 **Outputs:**
 - files in the format and with the name CAISO_NetDemand_<date>_Megawatts.csv
-- to directory = '/Users/yukahatori/A_Fairness/CAISO_NetDemand_Megawatts/'
+- to directory = '/Users/yukahatori/A_Fairness/FairnessML_git/Datasets/CAISO_NetDemand_Megawatts/'
 
 
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
