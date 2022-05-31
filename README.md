@@ -14,13 +14,21 @@ Model 0 is for predicting weather data, because we need that as an input to mode
 I intuitively built a "basic LSTM" from this [source][BasicLSTM].
 
 - LSTM-energy-consumption.ipynb
-- LSTM-future-prediction.ipynb
+  - creates the model for energy consumption prediction
 - LSTM-weather-data.ipynb
+  - creates the model for weather data prediction
+- LSTM-future-prediction.ipynb
+  - takes the models developed from weather-data and energy-consumption and outputs future energy consumption
 - figure-out-scaler.ipynb
+  - this file is just for understanding how the MinMaxScalers work
+- all-together_SF.ipynb
+  - combines energy-consumption, weather-data, and future-prediction all into one file
 
 There is a host of other files, like .save files, which are the MinMaxScalers for each variable. 
 
 The pipeline goes LSTM-energy-consumption --> LSTM-weather-data --> LSTM-future-prediction
+
+all-Together_SF combines the entire process (basically smashes those three files) into one. 
 
 ## DataProcess
 Below are all the files associated with processing data that will be used in the LSTM modeling.
@@ -94,10 +102,25 @@ Their collective output is stored in the Datasets folder.
 - files in the format and with the name CAISO_NetDemand_<date>_Megawatts.csv
 - to directory = '/Users/yukahatori/A_Fairness/FairnessML_git/Datasets/CAISO_NetDemand_Megawatts/'
 
+## Extra
+
+Some extra folders I have are: 
+
+- ARMA 
+  - this is from when I was attempting an ARMA model
+- storeLSTM_Learning
+  - this stores the files I used to learn about LSTM and time series modeling
+  - some are using Youtube tutorials
+  - more documentation in each individual file
+- CAISOprices
+  - I was working on using CAISO's API to get pricing 
+  - this might be helpful later
+ 
 
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
 
    [CAISO_Page]: <https://www.caiso.com/TodaysOutlook/Pages/default.aspx>
    [BasicLSTM]: <https://towardsdatascience.com/17-rules-of-thumb-for-building-a-neural-network-93356f9930af>
+  
 
 
